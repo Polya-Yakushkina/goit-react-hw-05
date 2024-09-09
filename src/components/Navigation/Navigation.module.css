@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    padding: 8px 64px;
+    box-shadow: 0px 3px 8px 0px lightgrey;
+}
+
+.link {
+    font-size: 24px;
+}
+
+.link.active {
+    color: black;
+    font-weight: 500;
+}
