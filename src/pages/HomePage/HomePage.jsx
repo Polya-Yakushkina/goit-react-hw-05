@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getTrendingMovies } from "../../TMDB-api";
+import { getTrendingMovies } from "../../tmdb-api";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loader from "../../components/Loader/Loader";
 import MovieList from "../../components/MovieList/MovieList";
