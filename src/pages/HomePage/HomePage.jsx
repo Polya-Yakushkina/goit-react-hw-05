@@ -31,7 +31,7 @@ export default function HomePage() {
 
     return (
         <div className={clsx(css.container)}>
-            <h1 className={clsx(css.text)}>Trending today</h1>
+            <h2 className={clsx(css.text)}>Trending today</h2>
             {error && <ErrorMessage />}
             {loading && <Loader />}
             {trendingMovies.length > 0 && <MovieList movies={trendingMovies} />}

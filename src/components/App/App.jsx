@@ -4,9 +4,9 @@ import Navigation from "../Navigation/Navigation";
 import Loader from "../Loader/Loader";
 
 const HomePage  = lazy(() => import("../../pages/HomePage/HomePage"));
-const MovieDetailsPage = lazy(() => import("../../pages/MovieDetailsPage/MovieDetailsPage"));
 const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage"));
-const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoudPage"));
+const MovieDetailsPage = lazy(() => import("../../pages/MovieDetailsPage/MovieDetailsPage"));
+const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoundPage"));
 
 export default function App() {
   return (

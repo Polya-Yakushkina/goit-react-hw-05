@@ -6,7 +6,7 @@ import css from "./NotFoundPage.module.css";
 export default function NotFoundPage() {
   return (
     <>
-      <h1 className={clsx(css.text)}>404 - Page Not Found</h1>
+      <h2 className={clsx(css.text)}>404 - Page Not Found</h2>
       <Link to="/">Go to Home Page</Link>
     </>
   );

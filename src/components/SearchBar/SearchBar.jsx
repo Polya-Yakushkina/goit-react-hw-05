@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import css from "./SearchBar.module.css";
 
-export default function SearchBar({ value, onChange, onSearch }) {
+export default function SearchBar({ onSearch }) {
     const handleSubmit = (e) => {
     e.preventDefault();
 
-    const query = e.target.elements.query.value;
-    onSearch(query.trim());
+    const query = e.target.elements.query.value.trim();
+        onSearch(query);
 
     e.target.reset();
   };
@@ -16,8 +16,7 @@ export default function SearchBar({ value, onChange, onSearch }) {
             <input
                 className={clsx(css.input)}
                 type="text"
-                value={value}
-                onChange={(e) => onChange(e.target.value)}
+                name="query"
             />
             <button type="submit">Search</button>
         </form>
