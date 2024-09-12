@@ -1,13 +1,13 @@
 import clsx from "clsx";
-import css from "./LoadMoreBtn.module.css";
+// import css from "./LoadMoreBtn.module.css";
 
 export default function LoadMoreBtn({ onClick }) {
     return (
-        <div className={clsx(css.container)}>
+        <div>
             <button
                 type="button"
                 onClick={onClick}
-                className={clsx(css.btn)}
+                // className={clsx(css.btn)}
             >
                 Load more
             </button>
