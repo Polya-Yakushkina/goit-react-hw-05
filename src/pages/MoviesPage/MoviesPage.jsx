@@ -6,7 +6,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loader from "../../components/Loader/Loader";
 import MovieList from "../../components/MovieList/MovieList";
-import LoadMoreBtn from "../../components/LoadMoreBtn/LoadMoreBtn";
+// import LoadMoreBtn from "../../components/LoadMoreBtn/LoadMoreBtn";
 
 import clsx from "clsx";
 import css from "./MoviesPage.module.css";
@@ -65,12 +65,12 @@ export default function MoviesPage() {
         setMovies([]);
     };
     
-    const handleLoadMore = () => {
-        const newParams = new URLSearchParams(searchParams);
-        const currentPage = Number(newParams.get("page")) || 1;
-        newParams.set("page", currentPage + 1);
-        setSearchParams(newParams);
-    };
+    // const handleLoadMore = () => {
+    //     const newParams = new URLSearchParams(searchParams);
+    //     const currentPage = Number(newParams.get("page")) || 1;
+    //     newParams.set("page", currentPage + 1);
+    //     setSearchParams(newParams);
+    // };
     
 
     return (
@@ -79,9 +79,9 @@ export default function MoviesPage() {
             {loading && <Loader />}
             {error && <ErrorMessage />}
             {movies.length > 0 && <MovieList movies={movies} />}
-            {movies.length > 0 && !loading && !error && page < totalPages && (
+            {/* {movies.length > 0 && !loading && !error && page < totalPages && (
                 <LoadMoreBtn onClick={handleLoadMore} />
-            )}
+            )} */}
             <Toaster />
         </div>
     );
