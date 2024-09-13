@@ -11,10 +11,11 @@
 }
 
 .link {
-    font-size: 24px;
+    font-size: 32px;
+    color: black;
 }
 
 .link.active {
-    color: black;
+    color: royalblue;
     font-weight: 500;
 }

@@ -1,0 +1,29 @@
+.form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.input {
+    border: 0.5px solid darkgrey;
+    border-radius: 5px;
+    width: 30%;
+    padding-left: 20px;
+    font-size: 22px;
+}
+
+input:hover {
+    border-color: #646cff;
+}
+
+input:focus,
+input:focus-visible {
+    outline: 1px auto #646cff;
+}
+
+.btn {
+    margin-left: 20px;
+    font-size: 22px;
+    border: 0.5px solid darkgrey;
+}

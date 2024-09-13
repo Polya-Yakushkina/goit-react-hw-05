@@ -23,7 +23,6 @@ export default function MoviesPage() {
 
     useEffect(() => {
         if (query === "") {
-            toast.error("Please enter movie title");
             return;
         }
         async function getMovies() {
@@ -34,7 +33,7 @@ export default function MoviesPage() {
                 if (data.results.length === 0) {
                     toast.error("No movies found");
                 } else {
-                    setMovies(prevMovies => [...prevMovies, ...data.results]);
+                    setMovies(prevMovies => page === 1 ? data.results : [...prevMovies, ...data.results]);
                     setTotalPages(data.total_pages);
                 }
             } catch (error) {
@@ -55,12 +54,16 @@ export default function MoviesPage() {
                     top: document.documentElement.scrollHeight,
                     behavior: "smooth",
                 });
-            }, 500);
+            }, 1000);
         }
     }, [movies]);
 
 
     const handleSearch = (newQuery) => {
+         if (newQuery.trim() === "") {
+            toast.error("Please enter movie title");
+            return;
+        }
         setSearchParams({ query: newQuery, page: 1 });
         setMovies([]);
     };
@@ -86,9 +89,3 @@ export default function MoviesPage() {
         </div>
     );
 }
-
-
-
-    
-
-

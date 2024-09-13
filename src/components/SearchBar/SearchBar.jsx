@@ -18,7 +18,7 @@ export default function SearchBar({ onSearch }) {
                 type="text"
                 name="query"
             />
-            <button type="submit">Search</button>
+            <button type="submit" className={clsx(css.btn)}>Search</button>
         </form>
     );
 }

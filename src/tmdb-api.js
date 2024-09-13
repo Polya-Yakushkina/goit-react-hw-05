@@ -8,38 +8,62 @@ axios.defaults.headers.common["Content-Type"] = "application/json";
 
 
 export const searchMovies = async (query, page) => {
-  const response = await axios.get(`/search/movie`, {
-    params: {
-      query,
-      include_adult: false,
-      language: "en-US",
-      page,
-      per_page: 20,
-    },
-  });
+  try {
+    const response = await axios.get(`/search/movie`, {
+      params: {
+        query,
+        include_adult: false,
+        language: "en-US",
+        page,
+      },
+    });
 
-  return {
-    results: response.data.results,
-    total_pages: response.data.total_pages,
-  };
+    return {
+      results: response.data.results,
+      total_pages: response.data.total_pages,
+    };
+  } catch (error) {
+    console.error("Error fetching search movies:", error);
+    throw error;
+  }
 };
 
 export const getTrendingMovies = async () => {
-  const response = await axios.get(`/trending/movie/day`);
-  return response.data.results;
+  try {
+    const response = await axios.get(`/trending/movie/day`);
+    return response.data.results;
+  } catch (error) {
+    console.error("Error fetching trending movies:", error);
+    throw error;
+  }
 };
 
 export const getMovieDetails = async (movieId) => {
-  const response = await axios.get(`/movie/${movieId}`);
-  return response.data;
+  try {
+    const response = await axios.get(`/movie/${movieId}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching details for movie ${movieId}:`, error);
+    throw error;
+  }
 };
 
 export const getMovieCredits = async (movieId) => {
-  const response = await axios.get(`/movie/${movieId}/credits`);
-  return response.data.cast;
+  try {
+    const response = await axios.get(`/movie/${movieId}/credits`);
+    return response.data.cast;
+  } catch (error) {
+    console.error(`Error fetching credits for movie ${movieId}:`, error);
+    throw error;
+  }
 };
 
 export const getMovieReviews = async (movieId) => {
-  const response = await axios.get(`/movie/${movieId}/reviews`);
-  return response.data.results;
+  try {
+    const response = await axios.get(`/movie/${movieId}/reviews`);
+    return response.data.results;
+  } catch (error) {
+    console.error(`Error fetching reviews for movie ${movieId}:`, error);
+    throw error;
+  }
 };
